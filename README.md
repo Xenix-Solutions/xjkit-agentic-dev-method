@@ -16,7 +16,7 @@ sección propia del documento.
   cada proyecto; no hay instalador ni copia global. Desde la raíz del proyecto, en PowerShell:
 
 ```powershell
-git clone --depth 1 https://github.com/Xenix-Solutions/xjkit-agentic-dev-method $env:TEMP\xjkit; Copy-Item -Recurse $env:TEMP\xjkit\kit\.claude .\; Remove-Item -Recurse -Force $env:TEMP\xjkit
+git clone --depth 1 https://github.com/Xenix-Solutions/xjkit-agentic-dev-method $env:TEMP\xjkit; New-Item -ItemType Directory -Force .\.claude | Out-Null; Copy-Item -Recurse -Force $env:TEMP\xjkit\kit\.claude\* .\.claude\; Remove-Item -Recurse -Force $env:TEMP\xjkit
 ```
 
   Después, abre Claude Code en el proyecto y teclea `/xjkit-init`.

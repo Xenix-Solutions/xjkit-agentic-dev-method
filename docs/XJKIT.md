@@ -1,6 +1,6 @@
 # XJKit — método de desarrollo con agentes de IA
 
-> **Versión 0.1**, 2026-09-09. Este documento describe la versión vigente y solo la vigente. Los cambios
+> **Versión 0.1.1**, 2026-09-09. Este documento describe la versión vigente y solo la vigente. Los cambios
 > entre versiones están en `CHANGELOG.md`. El porqué de cada decisión, y lo que se descartó con su razón, en
 > el registro de decisiones del repositorio de evolución del método. Aquí no hay historia: si algo se
 > explica, es porque hoy funciona así.
@@ -346,9 +346,10 @@ Todo lo anterior es texto. Esta sección es lo único que depende de la herramie
 crear el proyecto, desde la raíz del proyecto:
 
 ```powershell
-git clone --depth 1 https://github.com/Xenix-Solutions/xjkit-agentic-dev-method $env:TEMP\xjkit; Copy-Item -Recurse $env:TEMP\xjkit\kit\.claude .\; Remove-Item -Recurse -Force $env:TEMP\xjkit
+git clone --depth 1 https://github.com/Xenix-Solutions/xjkit-agentic-dev-method $env:TEMP\xjkit; New-Item -ItemType Directory -Force .\.claude | Out-Null; Copy-Item -Recurse -Force $env:TEMP\xjkit\kit\.claude\* .\.claude\; Remove-Item -Recurse -Force $env:TEMP\xjkit
 ```
 
+Vale también para un proyecto que ya tiene `.claude/`: añade el kit y no toca lo que hubiera.
 A partir de ahí, `/xjkit-init` hace el resto. No hay instalador ni copia global, y cada proyecto lleva su
 versión del método.
 

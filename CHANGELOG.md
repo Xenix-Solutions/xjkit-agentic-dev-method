@@ -4,6 +4,16 @@ Qué cambia en cada versión. El método vigente está en `docs/XJKIT.md`; el po
 de decisiones del repositorio de evolución.
 Cada versión lista también lo que quita.
 
+## 0.1.1 — 2026-09-09
+
+Corrección al comando de copia del kit, sin cambios en el método ni en el kit.
+
+**Entra**
+- El comando de copia crea `.claude/` si no existe y copia dentro el contenido del kit, así que funciona también en un proyecto que ya tiene `.claude/` (por ejemplo, con `settings.json`). Fallo observado al adaptar el primer proyecto real: el comando anterior daba error con `.claude/` previo.
+
+**Sale**
+- Nada.
+
 ## 0.1 — 2026-09-09
 
 Primera versión. Nace de JCC v1.5.6 con el objetivo de volver a lo simple sin perder el humano en el bucle.
