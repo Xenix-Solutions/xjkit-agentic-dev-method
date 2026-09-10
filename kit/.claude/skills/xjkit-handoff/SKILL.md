@@ -47,8 +47,10 @@ anteriores, handoffs y reviews, no se tocan: son fotos.
 
 PASO 3. Reescribe la sección de este work item en `xdocs/STATUS.md`, solo esa: camino, fase, dueño, fecha
 de hoy, la lista de pasos con sus marcas, la decisión abierta si la hay, el siguiente command con su ruta y
-el enlace a este handoff. Si el cierre termina el work item, marca su fila de `xdocs/README.md` como cerrada
-y retira su sección. Pendientes durables, una línea por cosa con enlace a su detalle: añade lo que este repo
+el enlace a este handoff. La lista de pasos es la del trabajo que sigue abierto: si este cierre completa un
+SPEC y el work item continúa con otro, el plan del SPEC cerrado se colapsa en una sola línea `[x]` con
+enlace a su REVIEW y a este handoff; el detalle vive aquí, no en STATUS. Si el cierre termina el work item,
+marca su fila de `xdocs/README.md` como cerrada y retira su sección. Pendientes durables, una línea por cosa con enlace a su detalle: añade lo que este repo
 tendrá que hacer y en esta sesión se decidió no hacer ahora; poda lo hecho, lo caducado y lo que haya pasado
 a un work item. No entra lo que ya es objeto de un DESIGN o SPEC en curso, lo de otro repo, ni una nota de
 vigilancia sin decisión. Lo que es simple continuidad va al handoff, no a pendientes.

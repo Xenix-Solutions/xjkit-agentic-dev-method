@@ -4,6 +4,16 @@ Qué cambia en cada versión. El método vigente está en `docs/XJKIT.md`; el po
 de decisiones del repositorio de evolución.
 Cada versión lista también lo que quita.
 
+## 0.1.3 — 2026-09-10
+
+El plan de un SPEC cerrado no se queda en `STATUS.md`.
+
+**Entra**
+- En el cierre, si el work item continúa con otro SPEC, el plan del SPEC cerrado se colapsa en una línea con enlace a su REVIEW y a su HANDOFF. En el doc y en la skill de handoff. Fallo observado en el primer ciclo completo real: `STATUS.md` conservó los nueve pasos del plan cerrado y un resumen de la Review, duplicando la línea del bloque.
+
+**Sale**
+- Nada.
+
 ## 0.1.2 — 2026-09-10
 
 Criterio de admisión de los pendientes durables de `STATUS.md`.
