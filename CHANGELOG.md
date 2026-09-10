@@ -4,6 +4,16 @@ Qué cambia en cada versión. El método vigente está en `docs/XJKIT.md`; el po
 de decisiones del repositorio de evolución.
 Cada versión lista también lo que quita.
 
+## 0.1.2 — 2026-09-10
+
+Criterio de admisión de los pendientes durables de `STATUS.md`.
+
+**Entra**
+- Qué es un pendiente durable: una línea con enlace, algo que este repo tendrá que hacer y se ha decidido no hacer ahora. No entra lo que ya es objeto de un DESIGN o SPEC en curso, lo de otro repo ni una nota de vigilancia sin decisión. La poda del cierre incluye lo que haya pasado a un work item. En el doc y en las skills de handoff e implement. Fallo observado en el primer proyecto real: el Backlog heredado de JCC entró entero, 16 entradas de varias líneas, seis de ellas fuera de ese criterio.
+
+**Sale**
+- Nada.
+
 ## 0.1.1 — 2026-09-09
 
 Corrección al comando de copia del kit, sin cambios en el método ni en el kit.

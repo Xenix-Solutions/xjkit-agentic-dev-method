@@ -48,8 +48,10 @@ anteriores, handoffs y reviews, no se tocan: son fotos.
 PASO 3. Reescribe la sección de este work item en `xdocs/STATUS.md`, solo esa: camino, fase, dueño, fecha
 de hoy, la lista de pasos con sus marcas, la decisión abierta si la hay, el siguiente command con su ruta y
 el enlace a este handoff. Si el cierre termina el work item, marca su fila de `xdocs/README.md` como cerrada
-y retira su sección. Pendientes durables: añade lo decidido "no ahora" en esta sesión y poda lo hecho o
-caducado. Lo que es simple continuidad va al handoff, no a pendientes.
+y retira su sección. Pendientes durables, una línea por cosa con enlace a su detalle: añade lo que este repo
+tendrá que hacer y en esta sesión se decidió no hacer ahora; poda lo hecho, lo caducado y lo que haya pasado
+a un work item. No entra lo que ya es objeto de un DESIGN o SPEC en curso, lo de otro repo, ni una nota de
+vigilancia sin decisión. Lo que es simple continuidad va al handoff, no a pendientes.
 
 PASO 4. Índices. Si esta sesión creó documentos que aún no están registrados, regístralos: en la tabla del
 README del Epic si es un Epic; en `xdocs/README.md` si es un work item nuevo.

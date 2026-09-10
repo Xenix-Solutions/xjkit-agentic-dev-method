@@ -1,6 +1,6 @@
 # XJKit — método de desarrollo con agentes de IA
 
-> **Versión 0.1.1**, 2026-09-09. Este documento describe la versión vigente y solo la vigente. Los cambios
+> **Versión 0.1.2**, 2026-09-10. Este documento describe la versión vigente y solo la vigente. Los cambios
 > entre versiones están en `CHANGELOG.md`. El porqué de cada decisión, y lo que se descartó con su razón, en
 > el registro de decisiones del repositorio de evolución del método. Aquí no hay historia: si algo se
 > explica, es porque hoy funciona así.
@@ -244,7 +244,10 @@ adoptan la nueva y los viejos siguen con la suya. La convención que el kit prop
 **`STATUS.md`** tiene una sección por work item activo. Cada sección lleva el camino, la fase, el dueño,
 su propia fecha de actualización, la lista de pasos con marcas, la decisión abierta si la hay, el siguiente
 command listo para pegar y el enlace al último HANDOFF. Al pie, los **pendientes durables**: una línea por
-cosa decidida "no ahora", podada cuando se hace o caduca. Cada sesión edita solo la sección de su work
+cosa, con enlace a su detalle. Entra lo que este repo tendrá que hacer y se ha decidido no hacer ahora. No
+entra lo que ya es objeto de un DESIGN o SPEC en curso, lo que pertenece a otro repo, ni una nota de
+vigilancia sin decisión. Se poda en cada cierre: lo hecho, lo caducado y lo que haya pasado a un work item.
+Cada sesión edita solo la sección de su work
 item. Plantilla al final.
 
 ---

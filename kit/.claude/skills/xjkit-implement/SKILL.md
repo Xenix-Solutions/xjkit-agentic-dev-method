@@ -32,7 +32,7 @@ explícitamente cómo lo preserva. Presenta el plan al operador y espera su vist
 PASO 2. Codifica siguiendo el plan y el contrato. Con código existente, imita los patrones y convenciones
 que ya hay; no introduzcas un estilo nuevo. Migraciones de datos idempotentes y, si se puede, reversibles.
 Nada fuera del contrato: lo que veas de paso, un bug ajeno o una mejora, va a "Pendientes durables" de
-`STATUS.md`, no se arregla aquí. Tests nuevos solo donde el contrato los pide; no conviertas comprobaciones
+`STATUS.md` en una línea con enlace, si es algo que este repo tendrá que hacer; no se arregla aquí. Tests nuevos solo donde el contrato los pide; no conviertas comprobaciones
 de usar y tirar en tests permanentes.
 
 Si la realidad te obliga a cambiar el diseño: ADDENDUM fechado en el DESIGN con la decisión y su porqué, y
