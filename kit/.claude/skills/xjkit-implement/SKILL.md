@@ -69,7 +69,10 @@ veredicto limpio o hasta que el operador pare.
 Nunca descartes un hallazgo en silencio. Si a la tercera pasada siguen saliendo hallazgos no triviales, el
 problema está arriba, en el contrato: no hagas una cuarta; dilo y propón volver al SPEC o al DESIGN.
 
-PASO 7. Cierra la fase en `STATUS.md`, solo la sección de este work item:
+PASO 7. Cierra la fase en `STATUS.md`, solo la sección de este work item. Aquí va la marca y el enlace,
+no el resumen de lo hecho ni las cifras: eso ya está en el REVIEW y en los commits. Antes de commitear,
+mide: la sección cabe en unas doce líneas y ninguna línea del fichero pasa de unos 200 caracteres
+(`awk 'length>200' xdocs/STATUS.md` debe salir vacío).
 - Estructural: `[x] Review limpio` con la fecha, y siguiente command `/xjkit-handoff`. El cierre lo dispara
   el operador, con el command o diciendo "prepara el cierre".
 - Acotado: con veredicto limpio, el work item termina aquí. Marca su fila de `xdocs/README.md` como

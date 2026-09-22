@@ -53,7 +53,11 @@ enlace a su REVIEW y a este handoff; el detalle vive aquí, no en STATUS. Si el 
 marca su fila de `xdocs/README.md` como cerrada y retira su sección. Pendientes durables, una línea por cosa con enlace a su detalle: añade lo que este repo
 tendrá que hacer y en esta sesión se decidió no hacer ahora; poda lo hecho, lo caducado y lo que haya pasado
 a un work item. No entra lo que ya es objeto de un DESIGN o SPEC en curso, lo de otro repo, ni una nota de
-vigilancia sin decisión. Lo que es simple continuidad va al handoff, no a pendientes.
+vigilancia sin decisión. Lo que es simple continuidad va al handoff, no a pendientes. El detalle de un
+pendiente vive en el documento enlazado, no en la línea.
+Antes de dar STATUS por escrito, mide: la sección cabe en unas doce líneas y ninguna línea del fichero pasa
+de unos 200 caracteres (`awk 'length>200' xdocs/STATUS.md` debe salir vacío). Lo que no cabe es historia,
+cifras o resumen de lo hecho: ya está en este handoff o en el REVIEW; en STATUS queda la marca y el enlace.
 
 PASO 4. Índices. Si esta sesión creó documentos que aún no están registrados, regístralos: en la tabla del
 README del Epic si es un Epic; en `xdocs/README.md` si es un work item nuevo.

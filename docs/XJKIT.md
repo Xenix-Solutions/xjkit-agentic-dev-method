@@ -1,6 +1,6 @@
 # XJKit — método de desarrollo con agentes de IA
 
-> **Versión 0.1.3**, 2026-09-10. Este documento describe la versión vigente y solo la vigente. Los cambios
+> **Versión 0.1.4**, 2026-09-22. Este documento describe la versión vigente y solo la vigente. Los cambios
 > entre versiones están en `CHANGELOG.md`. El porqué de cada decisión, y lo que se descartó con su razón, en
 > el registro de decisiones del repositorio de evolución del método. Aquí no hay historia: si algo se
 > explica, es porque hoy funciona así.
@@ -184,6 +184,16 @@ implementación solo entra su informe. Si aun así el operador cierra la sesión
 cierre deja en `STATUS.md` todos los pasos marcados y la Review pendiente; la sesión siguiente abre con el
 command de Implementation, lee ese estado y va directamente a lanzar al revisor, sin reimplementar nada.
 
+**El mismo revisor sirve para un documento**, cuando el operador lo pide expresamente, también desde una
+sesión sin command. No recibe "revisa este documento": recibe la ruta del documento, la **lista cerrada de
+afirmaciones** que se quieren comprobar y dónde están las fuentes primarias contra las que comprobarlas
+(ficheros del repo, salida de herramientas, material en `anexos/`). Devuelve una fila por afirmación con
+veredicto **confirmada**, **matizada** o **falsa** y su evidencia, en `REVIEW_yyyymmdd_<slug>.md` junto al
+documento revisado. Solo entran afirmaciones sobre el repo o sobre el mundo, que alguien sin la conversación
+puede comprobar; lo que ocurrió en la conversación, qué se decidió y en qué orden, lo revisa el operador
+leyendo. Es para documentos que salen del repo o condicionan una decisión de dinero o alcance, no para
+todo lo que se escribe.
+
 ### Cierre
 
 Lo dispara el operador, con el command o con una frase natural como "prepara el cierre" o "prepáralo para
@@ -246,11 +256,17 @@ su propia fecha de actualización, la lista de pasos con marcas, la decisión ab
 command listo para pegar y el enlace al último HANDOFF. La lista de pasos es la del trabajo abierto: el plan
 de un SPEC ya cerrado se colapsa en una línea con enlace a su REVIEW y su HANDOFF cuando el work item
 continúa con otro SPEC. Al pie, los **pendientes durables**: una línea por
-cosa, con enlace a su detalle. Entra lo que este repo tendrá que hacer y se ha decidido no hacer ahora. No
+cosa, con enlace a su detalle; el detalle vive en el documento enlazado, no en la línea. Entra lo que este
+repo tendrá que hacer y se ha decidido no hacer ahora. No
 entra lo que ya es objeto de un DESIGN o SPEC en curso, lo que pertenece a otro repo, ni una nota de
 vigilancia sin decisión. Se poda en cada cierre: lo hecho, lo caducado y lo que haya pasado a un work item.
 Cada sesión edita solo la sección de su work
 item. Plantilla al final.
+
+**Tamaño, medido y no interpretado.** Una sección cabe en unas doce líneas y ninguna línea de `STATUS.md`
+pasa de unos 200 caracteres. Lo que no cabe es historia, cifras o resumen de lo hecho: va al HANDOFF o al
+REVIEW, y aquí queda la marca y el enlace. Quien escribe `STATUS.md` lo comprueba contando, con `wc` o
+equivalente, antes de commitear.
 
 ---
 
@@ -307,7 +323,9 @@ lo que necesita:
 leer `STATUS.md` antes de opinar, no avanzar fases ni tocar el estado, y las convenciones de ubicación por
 si escribe un documento. Una sesión de consulta puede terminar en un `ANALYSIS_` registrado en el índice,
 y ese es todo su rastro. Si empieza a fijar alcance, modelo de datos o contratos, se ha convertido en
-diseño: el agente lo dice y ofrece el command de Design con el análisis como material.
+diseño: el agente lo dice y ofrece el command de Design con el análisis como material. A petición expresa
+del operador, una sesión sin command puede lanzar al revisor sobre un documento con su lista de
+afirmaciones (ver *Review*); eso no avanza fases ni toca el estado.
 
 ---
 
@@ -367,7 +385,7 @@ versión del método.
 | `/xjkit-spec <ruta al DESIGN>` | Fase 2, solo en estructural |
 | `/xjkit-implement <ruta al SPEC o al DESIGN>` | Fase 3, y lanza al revisor |
 | `/xjkit-handoff` | Cierre. También se dispara con la frase natural del operador |
-| agente `xjkit-review` | Fase 4. Lo lanza `implement` como subagente; su contrato completo está en la definición |
+| agente `xjkit-review` | Fase 4. Lo lanza `implement` como subagente; a petición expresa del operador, también una sesión sin command sobre un documento con su lista de afirmaciones. Su contrato completo está en la definición |
 
 - Los commands se invocan con la barra **al inicio** del mensaje y el contexto detrás. Todos llevan
   `disable-model-invocation: true`: nunca se autodisparan. Si aparece un `/xjkit-*` en mitad de un mensaje,

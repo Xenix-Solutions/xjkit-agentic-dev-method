@@ -4,6 +4,17 @@ Qué cambia en cada versión. El método vigente está en `docs/XJKIT.md`; el po
 de decisiones del repositorio de evolución.
 Cada versión lista también lo que quita.
 
+## 0.1.4 — 2026-09-22
+
+El revisor sirve también para documentos; `STATUS.md` tiene un tamaño que se mide.
+
+**Entra**
+- El operador puede lanzar `xjkit-review` sobre un documento, también desde una sesión sin command. El revisor recibe la ruta, una lista cerrada de afirmaciones y dónde están las fuentes primarias; devuelve una fila por afirmación con veredicto confirmada, matizada o falsa y su evidencia, en `REVIEW_yyyymmdd_<slug>.md` junto al documento. Solo afirmaciones sobre el repo o el mundo; lo que pasó en la conversación lo revisa el operador. En el doc y en la definición del agente. Fallo observado en el segundo proyecto real: una revisión de 20 afirmaciones sobre una propuesta a cliente, entregada en chat, llevaba una falsa y cuatro por matizar; lo detectó otra persona con otro modelo verificando fila a fila. Es el primer dato para la pregunta abierta de D5.
+- Tamaño de `STATUS.md` medido, no interpretado: una sección cabe en unas doce líneas y ninguna línea pasa de unos 200 caracteres; lo que no cabe es historia y va al HANDOFF o al REVIEW, dejando marca y enlace. El detalle de un pendiente durable vive en el documento enlazado, no en la línea. En el doc y en las skills de handoff e implement, con el comando de comprobación. Fallo observado en el segundo proyecto real, y segunda ocurrencia tras la que motivó 0.1.3: `STATUS.md` de 61 líneas y 26 KB, con líneas de hasta 2.169 caracteres que cumplían "una sola línea con enlace" al pie de la letra.
+
+**Sale**
+- Nada.
+
 ## 0.1.3 — 2026-09-10
 
 El plan de un SPEC cerrado no se queda en `STATUS.md`.
